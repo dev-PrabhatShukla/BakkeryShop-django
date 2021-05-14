@@ -18,7 +18,7 @@
         <div class="card-body">
             <h4 class="card-title mb-4 text-center"><b>Billing Address</b></h4>
             <small><h7 class="col md-2"><b>Note</b>: It's compulsary to fill this form before placing the order.</h7></small>
-            <form action="" method="POST">
+            <form action="{% url 'place_order' %}" method="POST">
                 {% csrf_token %}
                 <div class="form-row">
                     <div class="col form-group">
@@ -113,15 +113,15 @@
                         </td>
                         <td> 
                             <div class="price-wrap"> 
-                                <var class="price">Rs. {{ cart_item.sub_total }}</var> 
-                                <small class="text-muted">Rs. {{ cart_item.product.price }} each </small> 
+                                <var class="price">$ {{ cart_item.sub_total }}</var> 
+                                <small class="text-muted">$ {{ cart_item.product.price }} each </small> 
                             </div> <!-- price-wrap .// -->
                         </td>
                 
                         <!--just try-->
                         <td> 
                             <div class="delivery_charge-wrap"> 
-                                <var class="delivery_charge">Rs.{{ cart_item.product.delivery_charge }}</var> 
+                                <var class="delivery_charge">$ {{ cart_item.product.delivery_charge }}</var> 
                             </div> <!-- price-wrap .// -->
                         </td>
                 
