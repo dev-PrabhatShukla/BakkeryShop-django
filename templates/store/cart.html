@@ -84,15 +84,16 @@
         <!--just try-->
         <td> 
             <div class="delivery_charge-wrap"> 
-                <var class="delivery_charge">$ {{ cart_item.product.delivery_charge }}</var> 
+                <var class="delivery_charge">$ {{ cart_item.product.delivery_charge }}</var>
+                <br>
+                <br>
+                <a href="{% url 'remove_cart_item' cart_item.product.id cart_item.id %}" onclick="return confirm('Are you sure that you want to delete this Item ?')" class="btn btn-danger">Remove</a>
+                
             </div> <!-- price-wrap .// -->
         </td>
 
         <!--try ends here-->
 
-        <td class="text-right"> 
-            <a href="{% url 'remove_cart_item' cart_item.product.id cart_item.id %}" onclick="return confirm('Are you sure that you want to delete this Item ?')" class="btn btn-danger">Remove</a>
-        </td>
     </tr>
     {% endfor %}
 
