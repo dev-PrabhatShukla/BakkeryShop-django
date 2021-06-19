@@ -175,6 +175,7 @@ def order_complete(request):
         }
 
         return render(request, 'orders/order_complete.html', context)
+
     except(Payment.DoesNotExist, OrderDoesNotExist):
         return redirect('home')
 
